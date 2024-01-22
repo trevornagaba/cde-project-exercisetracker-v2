@@ -1,0 +1,9 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+
+
+# Troubleshooting
+# Error when running the "aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/y6c4b2f0" is solved by removing the "credsStore": "desktop" key value pair Users/<user?.Docker/docker/config.json file
