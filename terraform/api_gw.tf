@@ -12,10 +12,10 @@ resource "aws_apigatewayv2_api" "cde-project-exercisetracker-v2" {
 /* sets up application stages for the API Gateway - such as "Test", "Staging", and "Production". 
 The example configuration defines a single stage, with access logging enabled
 */
-resource "aws_apigatewayv2_stage" "v1" {
+resource "aws_apigatewayv2_stage" "cde-project-exercisetracker-v2" {
   api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
 
-  name        = "v1"
+  name        = "$default"
   auto_deploy = true
 
   access_log_settings {
@@ -58,10 +58,17 @@ resource "aws_apigatewayv2_route" "root" {
   target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
 }
 
-resource "aws_apigatewayv2_route" "hello" {
+resource "aws_apigatewayv2_route" "get_users" {
   api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
 
-  route_key = "GET /hello"
+  route_key = "GET /api/users"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
+}
+
+resource "aws_apigatewayv2_route" "post_users" {
+  api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
+
+  route_key = "POST /api/users"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
 }
 
