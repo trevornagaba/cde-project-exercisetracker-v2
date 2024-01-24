@@ -54,5 +54,3 @@ const listener = app.listen(process.env.PORT || 3000, () => {
 
 // Convert app to serverless; exporting handler allows lambda to call it
 module.exports.handler = serverless(app);
-
-exports.uuid = uuid;

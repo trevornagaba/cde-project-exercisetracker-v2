@@ -1,7 +1,7 @@
 {
 	"name": "fcc-exercise-tracker",
 	"version": "0.1.0",
-	"description": "A REST API project, part of Free Code Camp's curriculum",
+	"description": "A REST API project",
 	"main": "index.js",
 	"scripts": {
 		"start": "node index.js",
@@ -18,7 +18,7 @@
 		"uuidv4": "^6.2.13"
 	},
 	"repository": {
-		"url": "https://github.com/freeCodeCamp/boilerplate-project-exercisetracker"
+		"url": "https://github.com/trevornagaba/cde-project-exercisetracker-v2"
 	},
 	"license": "MIT",
 	"keywords": [
