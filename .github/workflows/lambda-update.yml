@@ -27,7 +27,7 @@ env:
   AWS_REGION: us-east-2                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: cde-project-exercisetracker-v2           # set this to your Amazon ECR repository name
   PORT: 3000
-  MONGO_URI : mongodb+srv://trevornagaba:test-cluster-01@test-cluster-01.9dvs05n.mongodb.net
+  MONGO_URI : "mongodb+srv://trevornagaba:test-cluster-01@test-cluster-01.9dvs05n.mongodb.net"
 
 permissions:
   contents: read
