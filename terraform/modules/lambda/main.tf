@@ -26,6 +26,13 @@ resource "aws_lambda_function" "cde-project-exercisetracker-v2" {
   # source_code_hash = data.archive_file.lambda_cde-project-exercisetracker-v2.output_base64sha256
 
   role = aws_iam_role.lambda_exec.arn
+
+  environment {
+    variables = {
+      PORT = "3000"
+      MONGO_URI = "mongodb+srv://trevornagaba:test-cluster-01@test-cluster-01.9dvs05n.mongodb.net"
+    }
+  }
 }
 
 resource "aws_cloudwatch_log_group" "cde-project-exercisetracker-v2" {
