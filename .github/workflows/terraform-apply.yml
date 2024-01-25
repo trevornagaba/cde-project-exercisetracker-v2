@@ -15,6 +15,8 @@ env:
   TF_API_TOKEN: "${{ secrets.TF_API_TOKEN }}"
   TF_WORKSPACE: "cde-project-exercisetracker-v2"
   CONFIG_DIRECTORY: "./terraform"
+  PORT: 3000
+  MONGO_URI : mongodb+srv://trevornagaba:test-cluster-01@test-cluster-01.9dvs05n.mongodb.net
 
 jobs:
   terraform:
