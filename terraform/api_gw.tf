@@ -82,14 +82,14 @@ resource "aws_apigatewayv2_route" "get_exercises" {
 resource "aws_apigatewayv2_route" "post_exercises" {
   api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
 
-  route_key = "POST /api/users/:id/exercises"
+  route_key = "POST /api/users/{id}/exercises"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
 }
 
 resource "aws_apigatewayv2_route" "get_exercise_byId" {
   api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
 
-  route_key = "GET /api/users/:id/exercises"
+  route_key = "GET /api/users/{id}/exercises"
   target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
 }
 
