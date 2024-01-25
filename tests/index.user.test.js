@@ -14,26 +14,3 @@ describe('User', () => {
     });
   });
 });
-
-// describe('Exercise', () => {
-//   it('should create a new exercise', (done) => {
-//     const userId = uuid();
-//     const description = 'test-description';
-//     const duration = 10;
-//     const date = new Date();
-
-//     Exercise.createAndSaveExercise({
-//       userId,
-//       description,
-//       duration,
-//       date
-//     }, (err, data) => {
-//       assert.strictEqual(err, null);
-//       assert.strictEqual(data.userId, userId);
-//       assert.strictEqual(data.description, description);
-//       assert.strictEqual(data.duration, duration);
-//       assert.strictEqual(data.date, date);
-//       done();
-//     });
-//   });
-// });
