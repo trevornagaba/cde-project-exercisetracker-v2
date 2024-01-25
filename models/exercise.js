@@ -13,6 +13,9 @@ const exerciseSchema = new mongoose.Schema({
   date: {
     type: String,
   },
+  user_id: {
+    type: String,
+  },
   id: {
     type: String,
   }
@@ -25,7 +28,7 @@ exports.createAndSaveExercise = (req, done) => {
     description: req.description,
     duration: req.duration,
     date: req.date,
-    id: req.id
+    user_id: req[":_id"]
   });
   exercise.save(function (err, data) {
   done(null , data);});
@@ -50,9 +53,11 @@ exports.listExercises = (done) => {
 //   done(null /*, data*/);
 // };
 
-// const findExerciseById = (personId, done) => {
-//   done(null /*, data*/);
-// };
+exports.findExerciseById = (personId, done) => {
+  return Exercise.find({user_id: personId}, function (err, data) {
+    done(null, data);
+  });
+};
 
 // const findEditThenSave = (personId, done) => {
 //   const foodToAdd = "hamburger";

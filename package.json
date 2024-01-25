@@ -2,10 +2,10 @@
 	"name": "fcc-exercise-tracker",
 	"version": "0.1.0",
 	"description": "A REST API project",
-	"main": "index.js",
+	"main": "app.js",
 	"scripts": {
-		"start": "node index.js",
-		"dev": "nodemon index.js",
+		"start": "node app.js",
+		"dev": "nodemon app.js",
 		"test": "jest --forceExit"
 	},
 	"dependencies": {
@@ -14,7 +14,9 @@
 		"dotenv": "^8.2.0",
 		"express": "^4.16.4",
 		"mongoose": "^5.11.15",
+		"request": "^2.88.2",
 		"serverless-http": "^3.2.0",
+		"supertest": "^6.3.4",
 		"uuidv4": "^6.2.13"
 	},
 	"repository": {

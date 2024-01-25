@@ -40,7 +40,26 @@ app.route('/api/users').get(function(req, res) {
     }});
 })
 
+app.get('/api/exercises', function(req, res) {
+  Exercise.listExercises(function(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json({exercise: data});
+    }});
+});
+
+app.get('/api/users/:user_id/exercises', function(req, res) {
+  Exercise.findExerciseById(req.params.user_id, function(err, data) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.json({exercise: data});
+    }});
+});
+
 app.post('/api/users/:id/exercises', function(req, res) {
+  console.log(req.body)
   Exercise.createAndSaveExercise(req.body, function(err, data) {
     if (err) {
       console.log(err);
