@@ -72,6 +72,27 @@ resource "aws_apigatewayv2_route" "post_users" {
   target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
 }
 
+resource "aws_apigatewayv2_route" "get_exercises" {
+  api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
+
+  route_key = "GET /api/exercises"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
+}
+
+resource "aws_apigatewayv2_route" "post_exercises" {
+  api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
+
+  route_key = "POST /api/users/:id/exercises"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
+}
+
+resource "aws_apigatewayv2_route" "get_exercise_byId" {
+  api_id = aws_apigatewayv2_api.cde-project-exercisetracker-v2.id
+
+  route_key = "GET /api/users/:id/exercises"
+  target    = "integrations/${aws_apigatewayv2_integration.lambda_function.id}"
+}
+
 // defines a log group to store access logs for the aws_apigatewayv2_stage.v1 API Gateway stage
 resource "aws_cloudwatch_log_group" "api_gw" {
   name = "/aws/api_gw/${aws_apigatewayv2_api.cde-project-exercisetracker-v2.name}"
